@@ -1,89 +1,122 @@
-// eslint-disable-next-line no-unused-vars
-import React from "react";
-import imagePng from "../../assets/image.png";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import imagePng from "../../assets/image.png";
 
 const NavBar = () => {
   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
 
   const navigateHandler = (path) => {
     navigate(path);
+    setIsOpen(false);
   };
+
   return (
-    <header className="p-4 dark:bg-gray-100 dark:text-gray-800">
-      <div className="container flex justify-between h-16 mx-auto">
-        <a
-          rel="noopener noreferrer"
-          href="#"
-          aria-label="Back to homepage"
-          className="flex items-center p-2"
+    <header className="p-4 rounded-xl bg-[radial-gradient(at_25%_25%,_var(--tw-gradient-stops))] from-secondary to-thirdty text-gray-100 shadow-md fixed  top-0 left-0 w-full z-50">
+      <div className="container flex justify-between items-center mx-auto h-16">
+        <div
+          className="flex items-center cursor-pointer"
           onClick={() => navigateHandler("/")}
         >
           <img
-            src={imagePng} // Reemplaza esta ruta con la ruta de tu imagen
-            alt="Descripción de la imagen"
-            className="w-16 h-16" // Puedes agregar clases de estilo para ajustar el tamaño de la imagen
+            src={imagePng}
+            alt="Logo"
+            className="w-14 h-16 transition-all duration-200 ease-in-out hover:scale-105 hover:rotate-1"
           />
-        </a>
-        <ul className="items-stretch hidden space-x-3 md:flex">
-          <li className="flex">
-            <a
-              rel="noopener noreferrer"
-              href="#"
-              className="flex items-center px-4 -mb-1 border-b-2 dark:border-"
-              onClick={() => navigateHandler("/aboutme")}
-            >
-              Sobre mi
-            </a>
-          </li>
-          <li className="flex">
-            <a
-              rel="noopener noreferrer"
-              href="#"
-              className="flex items-center px-4 -mb-1 border-b-2 dark:border-"
-              onClick={() => navigateHandler("/contact")}
-            >
-              Contacto
-            </a>
-          </li>
-          <li className="flex">
-            <a
-              rel="noopener noreferrer"
-              href="#"
-              className="flex items-center px-4 -mb-1 border-b-2 dark:border- dark:text-violet-600 dark:border-violet-600"
-              onClick={() => navigateHandler("/proyects")}
-            >
-              Proyectos
-            </a>
-          </li>
-          <li className="flex">
-            <a
-              rel="noopener noreferrer"
-              href="#"
-              className="flex items-center px-4 -mb-1 border-b-2 dark:border-"
-              onClick={() => navigateHandler("/Cv")}
-            >
-              CV
-            </a>
-          </li>
+        </div>
+
+        {/* Menú desktop */}
+        <ul className="hidden md:flex space-x-6">
+          {[
+            { name: "Sobre mí", path: "/aboutme" },
+            { name: "Proyectos", path: "/proyects" },
+            { name: "Contacto", path: "/contact" },
+            { name: "CV", path: "/Cv" },
+          ].map((item) => (
+            <li key={item.path}>
+              <button
+                onClick={() => navigateHandler(item.path)}
+                className="hover:text-violet-600 transition-colors"
+              >
+                {item.name}
+              </button>
+            </li>
+          ))}
         </ul>
-        <button className="flex justify-end p-4 md:hidden">
+
+        {/* Botón hamburguesa */}
+        <button
+          className="md:hidden"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle menu"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
+            className="w-6 h-6"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            className="w-6 h-6"
           >
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            ></path>
+              d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+            />
           </svg>
         </button>
       </div>
+
+      {/* Menú mobile */}
+      {isOpen && (
+        <>
+          <ul className="md:hidden fixed inset-0 flex flex-col items-center justify-center bg-black/30 backdrop-blur-md py-4 space-y-4 z-50">
+            <>
+              <div>
+                <button
+                  className="absolute top-4 right-4 p-2 text-gray-100 hover:text-violet-600 transition-colors"
+                  onClick={() => setIsOpen(!isOpen)}
+                  aria-label="Toggle menu"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-6 h-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d={
+                        isOpen
+                          ? "M6 18L18 6M6 6l12 12"
+                          : "M4 6h16M4 12h16M4 18h16"
+                      }
+                    />
+                  </svg>
+                </button>
+              </div>
+            </>
+            {[
+              { name: "Sobre mí", path: "/aboutme" },
+              { name: "Proyectos", path: "/proyects" },
+              { name: "Contacto", path: "/contact" },
+              { name: "CV", path: "/Cv" },
+            ].map((item) => (
+              <li key={item.path}>
+                <button
+                  onClick={() => navigateHandler(item.path)}
+                  className="hover:text-violet-600 transition-colors"
+                >
+                  {item.name}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
     </header>
   );
 };

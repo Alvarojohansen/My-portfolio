@@ -7,6 +7,7 @@ import NavBar from "./components/navBar/NavBar";
 import Dashboard from "./components/dashboard/Dashboard";
 import Contact from "./components/contact/Contact";
 import Proyects from "./components/proyects/Proyects";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/proyects" element={<Proyects />} />
         </Routes>
       </div>
+      <Footer />
     </>
   );
 }
