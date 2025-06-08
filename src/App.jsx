@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 
 import Cv from "./components/Cv/Cv";
@@ -10,6 +10,8 @@ import Proyects from "./components/proyects/Proyects";
 import Footer from "./components/footer/Footer";
 
 function App() {
+  const location = useLocation();
+  const isContactPage = location.pathname === "/contact";
   return (
     <>
       <NavBar />
@@ -22,7 +24,7 @@ function App() {
           <Route path="/proyects" element={<Proyects />} />
         </Routes>
       </div>
-      <Footer />
+      {!isContactPage && <Footer />}
     </>
   );
 }

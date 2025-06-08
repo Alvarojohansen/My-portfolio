@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import imagePng from "../../assets/image.png";
+import imagePng from "../../assets/AJ-dark.png";
 
 const NavBar = () => {
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ const NavBar = () => {
           <img
             src={imagePng}
             alt="Logo"
-            className="w-14 h-16 transition-all duration-200 ease-in-out hover:scale-105 hover:rotate-1"
+            className="w-16 h-16 transition-all duration-200 ease-in-out hover:scale-105 hover:rotate-1"
           />
         </div>
 
