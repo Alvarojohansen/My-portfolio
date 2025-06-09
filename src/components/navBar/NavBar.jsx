@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import imagePng from "../../assets/AJ-dark.png";
+import ThemeSwitch from "../switch/Switch";
 
 const NavBar = () => {
   const navigate = useNavigate();
@@ -27,6 +28,9 @@ const NavBar = () => {
 
         {/* Menú desktop */}
         <ul className="hidden md:flex space-x-6">
+          <li>
+            <ThemeSwitch />
+          </li>
           {[
             { name: "Sobre mí", path: "/aboutme" },
             { name: "Proyectos", path: "/proyects" },
@@ -45,6 +49,9 @@ const NavBar = () => {
         </ul>
 
         {/* Botón hamburguesa */}
+        <div className="md:hidden">
+          <ThemeSwitch />
+        </div>
         <button
           className="md:hidden"
           onClick={() => setIsOpen(!isOpen)}

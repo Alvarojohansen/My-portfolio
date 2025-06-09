@@ -1,15 +1,14 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import Cards from "./Cards/cards";
+import Cards from "./cards/Cards";
 
 const proyectos = [
   {
     id: 1,
     nombre: "🌠New Star Music",
     titulo:
-      "Tienda online pensada para vendedores de merchandising de bandas, hecha para que encuentres más fácil a tus artistas favoritos.",
-    tecnologias:
-      "React / tailwind / JavaScrypt/ Auth0 / C#.NET / EntitiFramework / MySQL",
+      "Tienda online pensada para vendedores de merchandising de bandas, hecha para que encuentres a tus artistas favoritos.",
+    tecnologias: "React / tailwind / JavaScrypt/ C#.NET / MySQL",
     link: "https://github.com/Alvarojohansen/New-Stars-Music-app",
   },
   {
@@ -58,9 +57,17 @@ const Proyects = () => {
   return (
     <section className="pt-20 px-6 min-h-screen flex items-center justify-center bg-[radial-gradient(at_30%_75%,_var(--tw-gradient-stops))] from-secondary to-thirdty text-gray-100">
       <section className="pt-20 px-6 min-h-screen flex flex-col items-center gap-8 bg-[radial-gradient(at_30%_75%,_var(--tw-gradient-stops))] from-secondary to-thirdty text-gray-100">
-        <h2 className="text-xl font-semibold tracking-wide uppercase">
-          Proyectos
-        </h2>
+        <h1 class="my-8 flex items-center">
+          <span
+            aria-hidden="true"
+            class="h-0.5 grow rounded-sm bg-gray-200 dark:bg-gray-700/75"
+          ></span>
+          <span class="mx-3 text-lg font-medium">Proyectos</span>
+          <span
+            aria-hidden="true"
+            class="h-0.5 grow rounded-sm bg-gray-200 dark:bg-gray-700/75"
+          ></span>
+        </h1>
         <Cards proyectos={proyectos} />
       </section>
     </section>
