@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const AboutMe = () => {
   return (
-    <section className="pt-40 px-6 min-h-screen flex justify-center bg-[radial-gradient(at_30%_75%,_var(--tw-gradient-stops))] from-secondary to-thirdty text-gray-100">
+    <section className="pt-40 px-6 pb-10 min-h-screen flex justify-center bg-[radial-gradient(at_30%_75%,_var(--tw-gradient-stops))] from-secondary to-thirdty text-gray-100">
       <div className="flex flex-col md:flex-row items-center md:items-start gap-8 max-w-5xl w-full">
         <motion.div
           className="text-center md:text-left px-2"

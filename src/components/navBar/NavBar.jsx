@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import imagePng from "../../assets/AJ-dark.png";
-import ThemeSwitch from "../switch/Switch";
+
+import { Switch } from "@material-tailwind/react";
 
 const NavBar = () => {
   const navigate = useNavigate();
@@ -29,7 +30,7 @@ const NavBar = () => {
         {/* Menú desktop */}
         <ul className="hidden md:flex space-x-6">
           <li>
-            <ThemeSwitch />
+            <Switch color="purple"/>
           </li>
           {[
             { name: "Sobre mí", path: "/aboutme" },
@@ -50,7 +51,7 @@ const NavBar = () => {
 
         {/* Botón hamburguesa */}
         <div className="md:hidden">
-          <ThemeSwitch />
+          <Switch />
         </div>
         <button
           className="md:hidden"
