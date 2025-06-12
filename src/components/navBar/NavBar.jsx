@@ -2,8 +2,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import imagePng from "../../assets/AJ-dark.png";
 
-import { Switch } from "@material-tailwind/react";
-
 const NavBar = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +16,7 @@ const NavBar = () => {
       <div className="container flex justify-between items-center mx-auto h-16">
         <div
           className="flex items-center cursor-pointer"
-          onClick={() => navigateHandler("/My-portfolio")}
+          onClick={() => navigateHandler("/")}
         >
           <img
             src={imagePng}
