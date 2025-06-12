@@ -29,9 +29,6 @@ const NavBar = () => {
 
         {/* Menú desktop */}
         <ul className="hidden md:flex space-x-6">
-          <li>
-            <Switch color="purple"/>
-          </li>
           {[
             { name: "Sobre mí", path: "/aboutme" },
             { name: "Proyectos", path: "/proyects" },
@@ -50,9 +47,7 @@ const NavBar = () => {
         </ul>
 
         {/* Botón hamburguesa */}
-        <div className="md:hidden">
-          <Switch />
-        </div>
+
         <button
           className="md:hidden"
           onClick={() => setIsOpen(!isOpen)}

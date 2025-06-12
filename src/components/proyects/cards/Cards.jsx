@@ -30,7 +30,7 @@ const Card = ({ proyecto }) => {
 
 const Cards = ({ proyectos }) => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4">
+    <div className="p-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4">
       {proyectos.map((proyecto) => (
         <Card key={proyecto.id} proyecto={proyecto} />
       ))}

@@ -38,14 +38,14 @@ const AboutMe = () => {
             <p className="text-gray-200 leading-relaxed max-w-xl">
               Soy Álvaro Johansen, desarrollador fullstack en formación,
               residiendo en Rosario, Santa Fe. Me especializo en la creación de
-              aplicaciones web con tecnologías como React, JavaScript, .NET C#,
-              HTML/CSS y Bootstrap. Actualmente estoy finalizando la Tecnicatura
-              Universitaria en Programación en UTN Rosario, donde ya he
-              alcanzado el 80% del plan de estudio y he participado en proyectos
-              colaborativos aplicando buenas prácticas de desarrollo. A lo largo
-              de mi formación complementaria en plataformas como Alura ONE, he
-              desarrollado proyectos completos, tanto individuales como
-              grupales, enfocados en e-commerce y experiencia de usuario.
+              aplicaciones web con tecnologías como React, JavaScript, C# .NET,
+              MySQL, SQLite, Python y Java. Actualmente estoy finalizando la
+              Tecnicatura Universitaria en Programación en UTN Rosario, donde ya
+              he alcanzado el 80% del plan de estudio y he participado en
+              proyectos colaborativos aplicando buenas prácticas de desarrollo.
+              A lo largo de mi formación complementaria en plataformas como
+              Alura ONE, he desarrollado proyectos completos, tanto individuales
+              como grupales, enfocados en e-commerce y experiencia de usuario.
               Algunos de estos incluyen Matuco, un sitio de comercio electrónico
               con React, y New Star Music, un proyecto grupal con
               funcionalidades de autenticación y diseño responsive. Además,

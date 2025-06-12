@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import TooltipLinkedin from "./tooltip/TooltipLinkedin";
 import TooltipSpotify from "./tooltip/TooltipSpotify";
 import TooltipDiscord from "./tooltip/TooltipDiscord";
@@ -7,16 +7,25 @@ import TooltipGithub from "./tooltip/TooltipGithub";
 import TooltipGmail from "./tooltip/TooltipGmail";
 import { motion } from "framer-motion";
 import FormContact from "./formContact/FormContact";
+import { Toaster } from "sonner";
 
 const Contact = () => {
   const [form, setForm] = useState(false);
+  const formRef = useRef(null);
+
   const onFormHandler = () => {
-    setForm(!form);
-    console.log(form);
+    setForm(true);
+
+    setTimeout(() => {
+      if (formRef.current) {
+        formRef.current.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 0);
   };
 
   return (
-    <section className="px-6 min-h-screen flex flex-col items-center justify-center bg-[radial-gradient(at_30%_75%,_var(--tw-gradient-stops))] from-secondary to-thirdty text-gray-100">
+    <section className="px-6 pt-10 min-h-screen flex flex-col items-center justify-center bg-[radial-gradient(at_30%_75%,_var(--tw-gradient-stops))] from-secondary to-thirdty text-gray-100">
+      <Toaster />
       <h1 className="my-8 flex items-center">
         <span aria-hidden="true" className="h-0.5 grow rounded-sm"></span>
         <span className="mx-3 text-lg font-medium">Contacto</span>
@@ -62,12 +71,13 @@ const Contact = () => {
       </motion.div>
       {form && (
         <motion.div
+          ref={formRef}
           className="pt-8 flex flex-row items-center justify-center gap-6"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
         >
-          <div className="p-20">
+          <div className="p-10">
             <FormContact setForm={setForm} />
           </div>
         </motion.div>

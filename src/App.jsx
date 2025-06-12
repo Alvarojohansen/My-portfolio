@@ -13,6 +13,7 @@ function App() {
   return (
     <Routes>
       <Route element={<MainLayout />}>
+      
         <Route path="/" element={<Dashboard />} />
         <Route path="/Cv" element={<Cv />} />
         <Route path="/aboutme" element={<AboutMe />} />

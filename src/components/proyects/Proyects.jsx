@@ -36,26 +36,11 @@ const proyectos = [
     tecnologias: "React / JavaScrypt",
     link: "https://github.com/Alvarojohansen/Amigo-invisible-challenge",
   },
-
-  {
-    id: 5,
-    nombre: "TaskManager",
-    titulo: "Aplicación para gestión de tareas con backend en .NET",
-    tecnologias: "",
-    link: "https://github.com/usuario/taskmanager",
-  },
-  {
-    id: 6,
-    nombre: "",
-    titulo: "",
-    tecnologias: "",
-    link: "",
-  },
 ];
 
 const Proyects = () => {
   return (
-    <section className="pt-20 px-6 min-h-screen flex items-center justify-center bg-[radial-gradient(at_30%_75%,_var(--tw-gradient-stops))] from-secondary to-thirdty text-gray-100">
+    <section className="pt-10 px-6 min-h-screen flex items-center justify-center bg-[radial-gradient(at_30%_75%,_var(--tw-gradient-stops))] from-secondary to-thirdty text-gray-100">
       <section className="pt-20 px-6 min-h-screen flex flex-col items-center gap-8 bg-[radial-gradient(at_30%_75%,_var(--tw-gradient-stops))] from-secondary to-thirdty text-gray-100">
         <h1 class="my-8 flex items-center">
           <span
