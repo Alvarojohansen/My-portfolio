@@ -18,7 +18,7 @@ const NavBar = () => {
       <div className="container flex justify-between items-center mx-auto h-16">
         <div
           className="flex items-center cursor-pointer"
-          onClick={() => navigateHandler("/")}
+          onClick={() => navigateHandler("/My-portfolio")}
         >
           <img
             src={imagePng}
