@@ -17,7 +17,7 @@ const Cv = () => {
 
           <div className="flex flex-col items-center sm:items-center text-center gap-2 self-center">
             <span className="text-lg font-medium">Descargar CV aquí</span>
-            <a href="/CV_Alvarojohansen_informatica.pdf" download>
+            <a href="CV_Alvarojohansen_informatica.pdf" download>
               <Button variant="gradient" color="white">
                 Descargar
               </Button>
