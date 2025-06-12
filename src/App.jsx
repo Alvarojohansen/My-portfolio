@@ -14,7 +14,7 @@ function App() {
     <Routes>
       <Route element={<MainLayout />}>
       
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/My-portfolio" element={<Dashboard />} />
         <Route path="/Cv" element={<Cv />} />
         <Route path="/aboutme" element={<AboutMe />} />
         <Route path="/contact" element={<Contact />} />
