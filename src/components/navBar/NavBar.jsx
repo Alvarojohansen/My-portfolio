@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import imagePng from "../../assets/AJ-dark.png";
+import imagePng from "../../assets/AJ-darkversion.png";
+import ToggleTheme from "../toggleTheme/ToggleTheme";
 
 const NavBar = () => {
   const navigate = useNavigate();
@@ -23,6 +24,9 @@ const NavBar = () => {
             alt="Logo"
             className="w-16 h-16 transition-all duration-200 ease-in-out hover:scale-105 hover:rotate-1"
           />
+        </div>
+        <div>
+          <ToggleTheme />
         </div>
 
         {/* Menú desktop */}
