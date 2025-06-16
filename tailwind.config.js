@@ -10,6 +10,9 @@ export default withMT({
         primary: "#242424",
         secondary: "#2d2333",
         thirdty: "#0f172a",
+        ligth_primary: "#FFFDFE",
+        ligth_secondary: "#DBEAFE",
+        ligth_thirdty: "#EDE9FE",
       },
       keyframes: {
         typing: {

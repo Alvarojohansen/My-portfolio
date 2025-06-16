@@ -15,6 +15,7 @@ export const ThemeContextProvider = ({ children }) => {
     if (theme === "light") {
       document.documentElement.setAttribute("data-bs-theme", "dark");
       localStorage.setItem("theme", "dark");
+      console.log("dark")
 
       setTheme("dark");
     } else {
@@ -22,6 +23,7 @@ export const ThemeContextProvider = ({ children }) => {
       localStorage.setItem("theme", "light");
 
       setTheme("light");
+      console.log("ligth")
     }
   };
 

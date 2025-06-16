@@ -1,10 +1,19 @@
 import { Button } from "@material-tailwind/react";
 import devPng from "../../assets/unnamed.png";
 import { motion } from "framer-motion";
+import { ThemeContext } from "../../services/theme/theme.context";
+import { useContext } from "react";
 
 const Cv = () => {
+  const { theme } = useContext(ThemeContext);
   return (
-    <section className="pt-20 px-6 min-h-screen flex items-center justify-center bg-[radial-gradient(at_30%_75%,_var(--tw-gradient-stops))] from-secondary to-thirdty text-gray-100">
+    <section
+      className={
+        theme == "light"
+          ? "pt-20 px-6 min-h-screen flex items-center justify-center bg-[radial-gradient(at_30%_75%,_var(--tw-gradient-stops))] from-ligth_primary to-blue-gray-500 text-gray-900"
+          : "pt-20 px-6 min-h-screen flex items-center justify-center bg-[radial-gradient(at_30%_75%,_var(--tw-gradient-stops))] from-secondary to-thirdty text-gray-100"
+      }
+    >
       <motion.div
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
