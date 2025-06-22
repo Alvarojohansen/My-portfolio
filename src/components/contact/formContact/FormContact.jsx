@@ -1,9 +1,11 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { toast } from "sonner";
+import { ThemeContext } from "../../../services/theme/theme.context";
 
 const FormContact = ({ setForm }) => {
   const form = useRef();
+  const { theme } = useContext(ThemeContext);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -36,7 +38,13 @@ const FormContact = ({ setForm }) => {
   };
 
   return (
-    <div className="max-w-md mx-auto relative overflow-hidden z-10 bg-white p-8 rounded-lg shadow-md before:w-24 before:h-24 before:absolute before:bg-purple-500 before:rounded-full before:-z-10 before:blur-2xl after:w-32 after:h-32 after:absolute after:bg-sky-400 after:rounded-full after:-z-10 after:blur-xl after:top-24 after:-right-12">
+    <div
+      className={
+        theme == "light"
+          ? "max-w-md mx-auto relative overflow-hidden z-10 bg-blue-gray-100 p-8 rounded-lg shadow-md before:w-24 before:h-24 before:absolute before:bg-purple-500 before:rounded-full before:-z-10 before:blur-2xl after:w-32 after:h-32 after:absolute after:bg-sky-400 after:rounded-full after:-z-10 after:blur-xl after:top-24 after:-right-12"
+          : "max-w-md mx-auto relative overflow-hidden z-10 bg-white p-8 rounded-lg shadow-md before:w-24 before:h-24 before:absolute before:bg-purple-500 before:rounded-full before:-z-10 before:blur-2xl after:w-32 after:h-32 after:absolute after:bg-sky-400 after:rounded-full after:-z-10 after:blur-xl after:top-24 after:-right-12"
+      }
+    >
       <button
         onClick={() => setForm(false)}
         className="absolute top-2 right-4 text-gray-400 hover:text-red-500 text-xl font-bold"
@@ -44,13 +52,23 @@ const FormContact = ({ setForm }) => {
       >
         ✕
       </button>
-      <h2 className="text-2xl text-gray-700 font-bold mb-6">
+      <h2
+        className={
+          theme == "light"
+            ? "text-2xl text-gray-900 font-bold mb-6"
+            : "text-2xl text-gray-700 font-bold mb-6"
+        }
+      >
         Contactate Conmigo!
       </h2>
       <form method="post" ref={form} onSubmit={sendEmail}>
         <div className="mb-4">
           <label
-            className="block text-sm font-medium text-gray-600"
+            className={
+              theme == "light"
+                ? "block text-sm font-medium text-gray-800"
+                : "block text-sm font-medium text-gray-600"
+            }
             htmlFor="name"
           >
             Nombre Completo
@@ -64,7 +82,11 @@ const FormContact = ({ setForm }) => {
 
         <div className="mb-4">
           <label
-            className=" block text-sm font-medium text-gray-600"
+            className={
+              theme == "light"
+                ? " block text-sm font-medium text-gray-800"
+                : " block text-sm font-medium text-gray-600"
+            }
             htmlFor="email"
           >
             Email
@@ -78,7 +100,11 @@ const FormContact = ({ setForm }) => {
         </div>
         <div className="mb-4">
           <label
-            className="block text-sm font-medium text-gray-600"
+            className={
+              theme == "light"
+                ? "block text-sm font-medium text-gray-800"
+                : "block text-sm font-medium text-gray-600"
+            }
             htmlFor="bio"
           >
             Mensaje

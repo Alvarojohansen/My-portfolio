@@ -19,7 +19,7 @@ const NavBar = () => {
     <header
       className={
         theme == "light"
-          ? "p-4 rounded-xl bg-[radial-gradient(at_25%_25%,_var(--tw-gradient-stops))] from-ligth_secondary to-ligth_thirdy text-gray-900 shadow-md fixed top-0 left-0 w-full z-50"
+          ? "p-4 rounded-xl bg-[radial-gradient(at_25%_25%,_var(--tw-gradient-stops))] from-light_secondary to-light_thirdty text-gray-900 shadow-md fixed top-0 left-0 w-full z-50"
           : "p-4 rounded-xl bg-[radial-gradient(at_25%_25%,_var(--tw-gradient-stops))] from-secondary to-thirdty text-gray-100 shadow-md fixed top-0 left-0 w-full z-50"
       }
     >

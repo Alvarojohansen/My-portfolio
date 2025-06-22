@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import TooltipLinkedin from "./tooltip/TooltipLinkedin";
 import TooltipSpotify from "./tooltip/TooltipSpotify";
 import TooltipDiscord from "./tooltip/TooltipDiscord";
@@ -8,10 +8,12 @@ import TooltipGmail from "./tooltip/TooltipGmail";
 import { motion } from "framer-motion";
 import FormContact from "./formContact/FormContact";
 import { Toaster } from "sonner";
+import { ThemeContext } from "../../services/theme/theme.context";
 
 const Contact = () => {
   const [form, setForm] = useState(false);
   const formRef = useRef(null);
+  const { theme } = useContext(ThemeContext);
 
   const onFormHandler = () => {
     setForm(true);
@@ -24,7 +26,13 @@ const Contact = () => {
   };
 
   return (
-    <section className="px-6 pt-10 min-h-screen flex flex-col items-center justify-center bg-[radial-gradient(at_30%_75%,_var(--tw-gradient-stops))] from-secondary to-thirdty text-gray-100">
+    <section
+      className={
+        theme == "light"
+          ? "px-6 pt-10 min-h-screen flex flex-col items-center justify-center bg-[radial-gradient(at_30%_75%,_var(--tw-gradient-stops))]  from-light_primary to-light_secondary text-gray-900  "
+          : "px-6 pt-10 min-h-screen flex flex-col items-center justify-center bg-[radial-gradient(at_30%_75%,_var(--tw-gradient-stops))]  from-primary to-secondary text-gray-100"
+      }
+    >
       <Toaster />
       <h1 className="my-8 flex items-center">
         <span aria-hidden="true" className="h-0.5 grow rounded-sm"></span>
@@ -33,7 +41,7 @@ const Contact = () => {
       </h1>
 
       <motion.p
-        className="max-w-2xl text-center text-lg text-gray-200"
+        className={theme =="light"? "max-w-2xl text-center text-lg text-gray-800" :"max-w-2xl text-center text-lg text-gray-200"}
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}

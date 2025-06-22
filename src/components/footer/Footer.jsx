@@ -1,8 +1,26 @@
+import { useContext } from "react";
+import { ThemeContext } from "../../services/theme/theme.context";
+import { useNavigate } from "react-router-dom";
+
 const Footer = () => {
+  const { theme } = useContext(ThemeContext);
+  const navigate = useNavigate();
+
+  const navigateHandler = (path) => {
+    navigate(path);
+  };
+
   return (
     <div className="fixed bottom-4 left-5 z-50">
-      <a href="https://www.linkedin.com/in/%C3%A1lvaro-johansen-bb147a246/">
-        <button className="group relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-pink-400 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800">
+      <a>
+        <button
+          onClick={() => navigateHandler("/contact")}
+          className={
+            theme == "light"
+              ? "group relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-300 to-pink-600 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800"
+              : "group relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-800 to-pink-400 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800"
+          }
+        >
           <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
             Contactate
           </span>

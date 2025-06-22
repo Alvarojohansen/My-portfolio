@@ -1,12 +1,14 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useContext } from "react";
 import { Avatar } from "@material-tailwind/react";
 import imageJpg from "../../assets/Foto_CV.jpg";
 import { motion } from "framer-motion";
+import { ThemeContext } from "../../services/theme/theme.context";
 
 const AboutMe = () => {
+  const { theme } = useContext(ThemeContext);
   return (
-    <section className="pt-40 px-6 pb-10 min-h-screen flex justify-center bg-[radial-gradient(at_30%_75%,_var(--tw-gradient-stops))] from-secondary to-thirdty text-gray-100">
+    <section className={theme == "light"?"pt-40 px-6 pb-10 min-h-screen flex justify-center bg-[radial-gradient(at_30%_75%,_var(--tw-gradient-stops))]  from-light_primary to-light_secondary text-gray-900" :"pt-40 px-6 pb-10 min-h-screen flex justify-center bg-[radial-gradient(at_30%_75%,_var(--tw-gradient-stops))]  from-primary to-secondary text-gray-100"}>
       <div className="flex flex-col md:flex-row items-center md:items-start gap-8 max-w-5xl w-full">
         <motion.div
           className="text-center md:text-left px-2"
@@ -32,10 +34,10 @@ const AboutMe = () => {
           {/* Bio */}
           <div className="text-center md:text-left px-2">
             <h1 className="text-2xl font-bold mb-2">Álvaro Johansen</h1>
-            <h2 className="text-lg text-blue-300 mb-4">
+            <h2 className={theme == "light"? "text-lg text-blue-600 mb-4":"text-lg text-blue-300 mb-4"}>
               Desarrollador Full Stack
             </h2>
-            <p className="text-gray-200 leading-relaxed max-w-xl">
+            <p className={theme == "light"? "text-gray-600 leading-relaxed max-w-xl" :"text-gray-200 leading-relaxed max-w-xl"}>
               Soy Álvaro Johansen, desarrollador fullstack en formación,
               residiendo en Rosario, Santa Fe. Me especializo en la creación de
               aplicaciones web con tecnologías como React, JavaScript, C# .NET,

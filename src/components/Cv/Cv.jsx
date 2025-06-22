@@ -10,8 +10,8 @@ const Cv = () => {
     <section
       className={
         theme == "light"
-          ? "pt-20 px-6 min-h-screen flex items-center justify-center bg-[radial-gradient(at_30%_75%,_var(--tw-gradient-stops))] from-ligth_primary to-blue-gray-500 text-gray-900"
-          : "pt-20 px-6 min-h-screen flex items-center justify-center bg-[radial-gradient(at_30%_75%,_var(--tw-gradient-stops))] from-secondary to-thirdty text-gray-100"
+          ? "pt-20 px-6 min-h-screen flex items-center justify-center bg-[radial-gradient(at_30%_75%,_var(--tw-gradient-stops))] from-light_primary to-light_secondary text-gray-900"
+          : "pt-20 px-6 min-h-screen flex items-center justify-center bg-[radial-gradient(at_30%_75%,_var(--tw-gradient-stops))] from-primary to-secondary text-gray-100"
       }
     >
       <motion.div
@@ -27,7 +27,10 @@ const Cv = () => {
           <div className="flex flex-col items-center sm:items-center text-center gap-2 self-center">
             <span className="text-lg font-medium">Descargar CV aquí</span>
             <a href="CV_Alvarojohansen_informatica.pdf" download>
-              <Button variant="gradient" color="white">
+              <Button
+                variant="gradient"
+                color={theme == "light" ? "purple" : "white"}
+              >
                 Descargar
               </Button>
             </a>

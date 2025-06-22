@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useContext } from "react";
 import Cards from "./cards/Cards";
+import { ThemeContext } from "../../services/theme/theme.context";
 
 const proyectos = [
   {
@@ -39,9 +40,16 @@ const proyectos = [
 ];
 
 const Proyects = () => {
+  const { theme } = useContext(ThemeContext);
   return (
-    <section className="pt-10 px-6 min-h-screen flex items-center justify-center bg-[radial-gradient(at_30%_75%,_var(--tw-gradient-stops))] from-secondary to-thirdty text-gray-100">
-      <section className="pt-20 px-6 min-h-screen flex flex-col items-center gap-8 bg-[radial-gradient(at_30%_75%,_var(--tw-gradient-stops))] from-secondary to-thirdty text-gray-100">
+    <div className="pt-10">
+      <section
+        className={
+          theme == "light"
+            ? "pt-20 px-6 min-h-screen flex flex-col items-center gap-8 bg-[radial-gradient(at_30%_75%,_var(--tw-gradient-stops))]  from-light_primary to-light_secondary text-gray-900"
+            : "pt-20 px-6 min-h-screen flex flex-col items-center gap-8 bg-[radial-gradient(at_30%_75%,_var(--tw-gradient-stops))]  from-primary to-secondary text-gray-100"
+        }
+      >
         <h1 class="my-8 flex items-center">
           <span
             aria-hidden="true"
@@ -55,7 +63,7 @@ const Proyects = () => {
         </h1>
         <Cards proyectos={proyectos} />
       </section>
-    </section>
+    </div>
   );
 };
 
